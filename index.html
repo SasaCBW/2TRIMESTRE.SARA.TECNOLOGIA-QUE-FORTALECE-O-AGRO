@@ -1,193 +1,394 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agrinho 2026 - Agro Forte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Agrinho 2026 | Agro Forte: Do Campo à Mesa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<header>
-<div class="logo">🌱 Agro Forte 2026</div>
+    <!-- MENU -->
 
-<nav>
-<a href="#inicio">Início</a>
-<a href="#sobre">Sobre</a>
-<a href="#beneficios">Benefícios</a>
-<a href="#tecnologia">Tecnologia</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+    <header>
 
-<section id="inicio" class="hero">
-<div class="hero-content">
+        <div class="logo">
+            🌱 Agro Forte
+        </div>
 
-<h1>AGRINHO 2026</h1>
+        <nav>
 
-<h2>AGRO FORTE</h2>
+            <a href="#inicio">Início</a>
 
-<p>
-O campo move o Brasil. Conheça as tecnologias,
-os produtores e a inovação que fortalecem o agronegócio.
-</p>
+            <a href="#sobre">Sobre</a>
 
-<a href="#sobre" class="btn">
-Conheça Mais
-</a>
+            <a href="#numeros">Números</a>
 
-</div>
-</section>
+            <a href="#tecnologia">Tecnologia</a>
 
-<section id="sobre">
+            <a href="#galeria">Galeria</a>
 
-<h2>Sobre o Projeto</h2>
+            <a href="#quiz">Quiz</a>
 
-<p>
-O Agrinho 2026 tem como tema "Agro Forte", destacando a
-importância do agronegócio para a economia, alimentação,
-tecnologia e sustentabilidade.
+            <a href="#contato">Contato</a>
 
-O objetivo é mostrar como o campo evoluiu e como a inovação
-transforma a produção agrícola, aproximando cidade e campo.
-</p>
+        </nav>
 
-</section>
+        <div class="acessibilidade">
 
-<section id="beneficios">
+            <button id="aumentarFonte">
+                A+
+            </button>
 
-<h2>Por que o Agro é Forte?</h2>
+            <button id="diminuirFonte">
+                A-
+            </button>
 
-<div class="cards">
+            <button id="darkMode">
+                🌙
+            </button>
 
-<div class="card">
-<h3>🌾 Produção</h3>
-<p>
-Responsável por alimentar milhões de pessoas todos os dias.
-</p>
-</div>
+        </div>
 
-<div class="card">
-<h3>🚜 Tecnologia</h3>
-<p>
-Máquinas inteligentes aumentam a produtividade.
-</p>
-</div>
+    </header>
 
-<div class="card">
-<h3>💰 Economia</h3>
-<p>
-Gera empregos e fortalece o desenvolvimento do país.
-</p>
-</div>
+    <!-- HERO -->
 
-<div class="card">
-<h3>🌎 Sustentabilidade</h3>
-<p>
-Novas práticas reduzem impactos ambientais.
-</p>
-</div>
+    <section id="inicio" class="hero">
 
-</div>
+        <div class="overlay"></div>
 
-</section>
+        <div class="hero-content">
 
-<section id="tecnologia">
+            <h1>AGRINHO 2026</h1>
 
-<h2>Tecnologia no Campo</h2>
+            <h2>AGRO FORTE: DO CAMPO À MESA</h2>
 
-<div class="grid">
+            <p>
+                Descubra como a tecnologia, a sustentabilidade e o trabalho dos produtores
+                transformam o campo e garantem alimento para milhões de pessoas.
+            </p>
 
-<div class="item">
-<h3>Drones</h3>
-<p>
-Monitoramento preciso das plantações.
-</p>
-</div>
+            <a href="#sobre" class="btn">
+                Explorar Projeto
+            </a>
 
-<div class="item">
-<h3>GPS Agrícola</h3>
-<p>
-Plantio e colheita com máxima eficiência.
-</p>
-</div>
+        </div>
 
-<div class="item">
-<h3>Inteligência Artificial</h3>
-<p>
-Análise de dados para melhores resultados.
-</p>
-</div>
+    </section>
 
-<div class="item">
-<h3>Sensores</h3>
-<p>
-Controle de irrigação e qualidade do solo.
-</p>
-</div>
+    <!-- SOBRE -->
 
-</div>
+    <section id="sobre" class="sobre">
 
-</section>
+        <div class="container">
 
-<section class="contador">
+            <div class="texto">
 
-<h2>Números do Agro</h2>
+                <h2>Sobre o Projeto</h2>
 
-<div class="numeros">
+                <p>
+                    O Agrinho 2026 tem como tema “Agro Forte”, mostrando a importância
+                    do agronegócio para o desenvolvimento econômico, social e ambiental.
+                </p>
 
-<div>
-<span id="n1">0</span>
-<p>Produtores</p>
-</div>
+                <p>
+                    O campo produz alimentos, gera empregos, movimenta a economia e
+                    utiliza tecnologias avançadas para aumentar a produtividade e
+                    preservar os recursos naturais.
+                </p>
 
-<div>
-<span id="n2">0</span>
-<p>Tecnologias</p>
-</div>
+            </div>
 
-<div>
-<span id="n3">0</span>
-<p>Projetos Sustentáveis</p>
-</div>
+            <div class="imagem">
 
-</div>
+                <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
+                    alt="Plantação agrícola">
 
-</section>
+            </div>
 
-<section id="contato">
+        </div>
 
-<h2>Faça Parte do Futuro do Campo</h2>
+    </section>
 
-<form>
+    <!-- NÚMEROS -->
 
-<input type="text" placeholder="Seu nome">
+    <section id="numeros" class="numeros">
 
-<input type="email" placeholder="Seu email">
+        <h2>O Agro em Números</h2>
 
-<textarea placeholder="Mensagem"></textarea>
+        <div class="cards-numeros">
 
-<button type="submit">
-Enviar
-</button>
+            <div class="numero-card">
 
-</form>
+                <h3 id="contador1">0</h3>
 
-</section>
+                <p>Produtores</p>
 
-<footer>
+            </div>
 
-<p>
-Agrinho 2026 - Agro Forte © Todos os direitos reservados.
-</p>
+            <div class="numero-card">
 
-</footer>
+                <h3 id="contador2">0</h3>
 
-<script src="script.js"></script>
+                <p>Tecnologias</p>
+
+            </div>
+
+            <div class="numero-card">
+
+                <h3 id="contador3">0</h3>
+
+                <p>Projetos Sustentáveis</p>
+
+            </div>
+
+            <div class="numero-card">
+
+                <h3 id="contador4">0</h3>
+
+                <p>Famílias Beneficiadas</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECNOLOGIA -->
+
+    <section id="tecnologia" class="tecnologia">
+
+        <h2>Tecnologia no Campo</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fas fa-drone"></i>
+
+                <h3>Drones</h3>
+
+                <p>
+                    Monitoramento das plantações em tempo real.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-robot"></i>
+
+                <h3>Robôs</h3>
+
+                <p>
+                    Automação das tarefas agrícolas.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-satellite"></i>
+
+                <h3>GPS</h3>
+
+                <p>
+                    Precisão no plantio e colheita.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-microchip"></i>
+
+                <h3>Inteligência Artificial</h3>
+
+                <p>
+                    Análise de dados e previsão de produção.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALERIA -->
+
+    <section id="galeria">
+
+        <h2>Galeria do Agro</h2>
+
+        <div class="galeria">
+
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+        </div>
+
+    </section>
+
+    <!-- LINHA DO TEMPO -->
+
+    <section class="timeline">
+
+        <h2>Evolução do Agro</h2>
+
+        <div class="linha">
+
+            <div>
+                <h3>2000</h3>
+                <p>Modernização das máquinas.</p>
+            </div>
+
+            <div>
+                <h3>2010</h3>
+                <p>Popularização do GPS.</p>
+            </div>
+
+            <div>
+                <h3>2020</h3>
+                <p>Drones e sensores inteligentes.</p>
+            </div>
+
+            <div>
+                <h3>2026</h3>
+                <p>IA e agricultura sustentável.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUIZ -->
+
+    <section id="quiz">
+
+        <h2>Quiz do Agro</h2>
+
+        <div class="quiz-box">
+
+            <h3>
+                Qual tecnologia monitora plantações pelo ar?
+            </h3>
+
+            <button onclick="respostaQuiz(false)">
+                Trator
+            </button>
+
+            <button onclick="respostaQuiz(true)">
+                Drone
+            </button>
+
+            <button onclick="respostaQuiz(false)">
+                Irrigador
+            </button>
+
+            <p id="resultado"></p>
+
+        </div>
+
+    </section>
+
+    <!-- SUSTENTABILIDADE -->
+
+    <section class="sustentabilidade">
+
+        <h2>Sustentabilidade</h2>
+
+        <div class="sust-grid">
+
+            <div>
+                ♻️
+                <h3>Reciclagem</h3>
+            </div>
+
+            <div>
+                💧
+                <h3>Economia de Água</h3>
+            </div>
+
+            <div>
+                🌳
+                <h3>Preservação</h3>
+            </div>
+
+            <div>
+                ☀️
+                <h3>Energia Limpa</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato">
+
+        <h2>Entre em Contato</h2>
+
+        <form>
+
+            <input type="text" placeholder="Nome">
+
+            <input type="email" placeholder="E-mail">
+
+            <textarea placeholder="Mensagem"></textarea>
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <h3>🌱 Agro Forte 2026</h3>
+
+        <p>
+            Projeto desenvolvido para o Agrinho 2026.
+        </p>
+
+        <div class="redes">
+
+            <i class="fab fa-instagram"></i>
+
+            <i class="fab fa-facebook"></i>
+
+            <i class="fab fa-youtube"></i>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
