@@ -463,3 +463,340 @@ body.dark .card{
     color:white;
 
 }
+/* ===========================
+   CARROSSEL PREMIUM
+=========================== */
+
+#carrossel{
+
+    background:#f8fff8;
+
+}
+
+body.dark #carrossel{
+
+    background:#161616;
+
+}
+
+.slider{
+
+    width:100%;
+
+    max-width:1100px;
+
+    height:550px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.slides{
+
+    display:flex;
+
+    width:500%;
+
+    height:100%;
+
+    transition:1s;
+
+}
+
+.slides img{
+
+    width:20%;
+
+    object-fit:cover;
+
+}
+
+/* ===========================
+   GALERIA PREMIUM
+=========================== */
+
+#galeria{
+
+    background:white;
+
+}
+
+body.dark #galeria{
+
+    background:#121212;
+
+}
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.galeria img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+    transition:.4s;
+
+}
+
+.galeria img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   MAPA BRASIL
+=========================== */
+
+#mapa{
+
+    background:#eef8ee;
+
+}
+
+body.dark #mapa{
+
+    background:#171717;
+
+}
+
+.mapa-container{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.mapa-container img{
+
+    width:100%;
+
+    max-width:700px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.regioes{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.regioes div{
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+    transition:.3s;
+
+}
+
+.regioes div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.regioes p{
+
+    margin-top:10px;
+
+}
+
+body.dark .regioes div{
+
+    background:var(--card-dark);
+
+    color:white;
+
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline{
+
+    background:#f4fdf4;
+
+}
+
+body.dark .timeline{
+
+    background:#151515;
+
+}
+
+.linha{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+.linha div{
+
+    background:white;
+
+    width:220px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--sombra);
+
+    transition:.3s;
+
+}
+
+.linha div:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.linha h3{
+
+    color:var(--verde);
+
+    margin-bottom:10px;
+
+}
+
+body.dark .linha div{
+
+    background:var(--card-dark);
+
+    color:white;
+
+}
+
+body.dark .linha h3{
+
+    color:#8dff8d;
+
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.zoom{
+
+    transition:.4s;
+
+}
+
+.zoom:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ===========================
+   RESPONSIVO PREMIUM
+=========================== */
+
+@media(max-width:900px){
+
+    .slider{
+
+        height:350px;
+
+    }
+
+    .linha{
+
+        flex-direction:column;
+        align-items:center;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .slider{
+
+        height:230px;
+
+    }
+
+    .galeria img{
+
+        height:200px;
+
+    }
+
+    .mapa-container img{
+
+        max-width:100%;
+
+    }
+
+}
