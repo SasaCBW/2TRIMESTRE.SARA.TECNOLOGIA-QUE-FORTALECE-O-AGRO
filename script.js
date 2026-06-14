@@ -1,135 +1,244 @@
-// ==============================
-// CONTADORES ANIMADOS
-// ==============================
+// ====================================
+// AGRINHO 2026 PREMIUM+
+// ====================================
 
-function animarContador(id, valorFinal, velocidade) {
+// MODO ESCURO
 
-    let contador = 0;
+const darkBtn =
+document.getElementById("darkMode");
 
-    const elemento = document.getElementById(id);
+if(darkBtn){
 
-    const intervalo = setInterval(() => {
+    darkBtn.addEventListener("click",()=>{
 
-        contador += Math.ceil(valorFinal / 100);
+        document.body.classList.toggle("dark");
 
-        if (contador >= valorFinal) {
+        if(document.body.classList.contains("dark")){
 
-            contador = valorFinal;
+            darkBtn.innerHTML = "☀️";
+
+        }else{
+
+            darkBtn.innerHTML = "🌙";
+
+        }
+
+    });
+
+}
+
+// ====================================
+// ACESSIBILIDADE
+// ====================================
+
+let tamanhoFonte = 16;
+
+const aumentar =
+document.getElementById("aumentarFonte");
+
+const diminuir =
+document.getElementById("diminuirFonte");
+
+if(aumentar){
+
+    aumentar.addEventListener("click",()=>{
+
+        tamanhoFonte += 2;
+
+        document.body.style.fontSize =
+        tamanhoFonte + "px";
+
+    });
+
+}
+
+if(diminuir){
+
+    diminuir.addEventListener("click",()=>{
+
+        if(tamanhoFonte > 12){
+
+            tamanhoFonte -= 2;
+
+            document.body.style.fontSize =
+            tamanhoFonte + "px";
+
+        }
+
+    });
+
+}
+
+// ====================================
+// CONTADORES
+// ====================================
+
+function animarContador(id, valor){
+
+    let atual = 0;
+
+    const elemento =
+    document.getElementById(id);
+
+    if(!elemento) return;
+
+    const intervalo = setInterval(()=>{
+
+        atual += Math.ceil(valor / 100);
+
+        if(atual >= valor){
+
+            atual = valor;
 
             clearInterval(intervalo);
 
         }
 
-        elemento.innerText = contador.toLocaleString();
+        elemento.innerText =
+        atual.toLocaleString();
 
-    }, velocidade);
-
-}
-
-animarContador("contador1", 5000, 20);
-animarContador("contador2", 120, 30);
-animarContador("contador3", 300, 25);
-animarContador("contador4", 1000000, 1);
-
-// ==============================
-// QUIZ
-// ==============================
-
-function respostaQuiz(correta) {
-
-    const resultado = document.getElementById("resultado");
-
-    if (correta) {
-
-        resultado.innerHTML =
-            "✅ Correto! Os drones são amplamente utilizados para monitorar plantações.";
-
-        resultado.style.color = "green";
-
-    } else {
-
-        resultado.innerHTML =
-            "❌ Resposta incorreta. A resposta certa é Drone.";
-
-        resultado.style.color = "red";
-
-    }
+    },20);
 
 }
 
-// ==============================
-// MODO ESCURO
-// ==============================
+animarContador("contador1",5000);
+animarContador("contador2",120);
+animarContador("contador3",300);
+animarContador("contador4",1000000);
 
-const botaoDark = document.getElementById("darkMode");
+// ====================================
+// CARROSSEL AUTOMÁTICO
+// ====================================
 
-botaoDark.addEventListener("click", () => {
+const slides =
+document.querySelector(".slides");
 
-    document.body.classList.toggle("dark");
+let slideAtual = 0;
 
-    if (document.body.classList.contains("dark")) {
+if(slides){
 
-        botaoDark.innerHTML = "☀️";
+    setInterval(()=>{
 
-    } else {
+        slideAtual++;
 
-        botaoDark.innerHTML = "🌙";
+        if(slideAtual > 4){
 
-    }
+            slideAtual = 0;
 
-});
+        }
 
-// ==============================
-// ACESSIBILIDADE
-// AUMENTAR FONTE
-// ==============================
+        slides.style.transform =
+        `translateX(-${slideAtual * 20}%)`;
 
-let tamanhoFonte = 16;
+    },3500);
 
-document.getElementById("aumentarFonte")
-.addEventListener("click", () => {
+}
 
-    tamanhoFonte += 2;
+// ====================================
+// QUIZ PREMIUM
+// ====================================
 
-    document.body.style.fontSize =
-        tamanhoFonte + "px";
+let pontos = 0;
+let respondidas = 0;
 
-});
+function responder(botao, correta){
 
-// ==============================
-// DIMINUIR FONTE
-// ==============================
+    const card =
+    botao.parentElement;
 
-document.getElementById("diminuirFonte")
-.addEventListener("click", () => {
+    if(card.classList.contains("respondido")){
 
-    if (tamanhoFonte > 12) {
-
-        tamanhoFonte -= 2;
-
-        document.body.style.fontSize =
-            tamanhoFonte + "px";
+        return;
 
     }
 
-});
+    card.classList.add("respondido");
 
-// ==============================
-// ANIMAÇÃO AO ROLAR
-// ==============================
+    respondidas++;
 
-const observador = new IntersectionObserver(
+    if(correta){
 
-(entries) => {
+        pontos++;
 
-    entries.forEach(entry => {
+        botao.style.background =
+        "#2e7d32";
 
-        if (entry.isIntersecting) {
+    }else{
 
-            entry.target.style.opacity = "1";
+        botao.style.background =
+        "#c62828";
 
-            entry.target.style.transform =
-                "translateY(0px)";
+    }
+
+    const placar =
+    document.getElementById("pontuacao");
+
+    if(placar){
+
+        placar.innerText = pontos;
+
+    }
+
+    if(respondidas === 10){
+
+        gerarCertificado();
+
+    }
+
+}
+
+// ====================================
+// CERTIFICADO FINAL
+// ====================================
+
+function gerarCertificado(){
+
+    let nivel = "";
+
+    if(pontos >= 9){
+
+        nivel =
+        "🏆 Especialista do Agro";
+
+    }else if(pontos >= 7){
+
+        nivel =
+        "🌱 Conhecedor do Agro";
+
+    }else if(pontos >= 5){
+
+        nivel =
+        "🚜 Aprendiz do Agro";
+
+    }else{
+
+        nivel =
+        "📚 Continue estudando";
+
+    }
+
+    alert(
+        "Resultado Final\n\n" +
+        "Pontuação: " + pontos + "/10\n\n" +
+        nivel
+    );
+
+}
+
+// ====================================
+// ANIMAÇÕES
+// ====================================
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
 
         }
 
@@ -138,33 +247,26 @@ const observador = new IntersectionObserver(
 },
 
 {
-    threshold: 0.1
+    threshold:0.1
 }
 
 );
 
-const elementos =
-document.querySelectorAll(
-    "section, .card, .numero-card, .linha div, .sust-grid div"
-);
+document
+.querySelectorAll(
+".card,.numero-card,.linha div,.regioes div,.quiz-card"
+)
+.forEach(el=>{
 
-elementos.forEach(elemento => {
+    el.classList.add("fade-up");
 
-    elemento.style.opacity = "0";
-
-    elemento.style.transform =
-        "translateY(50px)";
-
-    elemento.style.transition =
-        "all 0.8s ease";
-
-    observador.observe(elemento);
+    observer.observe(el);
 
 });
 
-// ==============================
-// MENU ATIVO AO ROLAR
-// ==============================
+// ====================================
+// MENU ATIVO
+// ====================================
 
 const secoes =
 document.querySelectorAll("section");
@@ -172,37 +274,42 @@ document.querySelectorAll("section");
 const links =
 document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
     let atual = "";
 
-    secoes.forEach(secao => {
+    secoes.forEach(secao=>{
 
         const topo =
-            secao.offsetTop - 150;
+        secao.offsetTop - 150;
 
         const altura =
-            secao.clientHeight;
+        secao.clientHeight;
 
-        if (
+        if(
+
             pageYOffset >= topo &&
             pageYOffset < topo + altura
-        ) {
 
-            atual = secao.getAttribute("id");
+        ){
+
+            atual =
+            secao.getAttribute("id");
 
         }
 
     });
 
-    links.forEach(link => {
+    links.forEach(link=>{
 
         link.classList.remove("ativo");
 
-        if (
+        if(
+
             link.getAttribute("href") ===
             "#" + atual
-        ) {
+
+        ){
 
             link.classList.add("ativo");
 
@@ -212,94 +319,95 @@ window.addEventListener("scroll", () => {
 
 });
 
-// ==============================
+// ====================================
 // FORMULÁRIO
-// ==============================
+// ====================================
 
-const formulario =
+const form =
 document.querySelector("form");
 
-if (formulario) {
+if(form){
 
-    formulario.addEventListener(
+    form.addEventListener(
+
         "submit",
-        function (e) {
+
+        function(e){
 
             e.preventDefault();
 
             alert(
-                "Mensagem enviada com sucesso! 🌱"
+                "🌱 Mensagem enviada com sucesso!"
             );
 
-            formulario.reset();
+            form.reset();
 
         }
+
     );
 
 }
 
-// ==============================
-// BOTÃO VOLTAR AO TOPO
-// ==============================
+// ====================================
+// BOTÃO TOPO
+// ====================================
 
-const botaoTopo =
+const topo =
 document.createElement("button");
 
-botaoTopo.innerHTML = "⬆";
+topo.innerHTML = "⬆";
 
-botaoTopo.id = "topo";
+topo.id = "btnTopo";
 
-document.body.appendChild(botaoTopo);
+document.body.appendChild(topo);
 
-botaoTopo.style.position = "fixed";
-botaoTopo.style.bottom = "20px";
-botaoTopo.style.right = "20px";
-botaoTopo.style.padding = "15px";
-botaoTopo.style.border = "none";
-botaoTopo.style.borderRadius = "50%";
-botaoTopo.style.cursor = "pointer";
-botaoTopo.style.background = "#2e7d32";
-botaoTopo.style.color = "white";
-botaoTopo.style.display = "none";
-botaoTopo.style.zIndex = "9999";
+topo.style.position = "fixed";
+topo.style.bottom = "20px";
+topo.style.right = "20px";
+topo.style.padding = "15px";
+topo.style.border = "none";
+topo.style.borderRadius = "50%";
+topo.style.background = "#2e7d32";
+topo.style.color = "white";
+topo.style.cursor = "pointer";
+topo.style.display = "none";
+topo.style.zIndex = "9999";
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    if (window.scrollY > 500) {
+    if(window.scrollY > 500){
 
-        botaoTopo.style.display = "block";
+        topo.style.display =
+        "block";
 
-    } else {
+    }else{
 
-        botaoTopo.style.display = "none";
+        topo.style.display =
+        "none";
 
     }
 
 });
 
-botaoTopo.addEventListener("click", () => {
+topo.addEventListener("click",()=>{
 
     window.scrollTo({
 
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
 
     });
 
 });
 
-// ==============================
-// MENSAGEM DE BOAS-VINDAS
-// ==============================
+// ====================================
+// BOAS-VINDAS
+// ====================================
 
-window.addEventListener("load", () => {
+window.addEventListener("load",()=>{
 
-    setTimeout(() => {
-
-        console.log(
-            "🌱 Bem-vindo ao projeto Agrinho 2026 - Agro Forte!"
-        );
-
-    }, 1000);
+    console.log(
+        "🌱 Agrinho 2026 Premium+ carregado!"
+    );
 
 });
