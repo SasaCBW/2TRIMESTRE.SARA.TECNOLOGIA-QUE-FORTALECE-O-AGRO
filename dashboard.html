@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - Agro Forte 2026</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#1b5e20;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.container{
+padding:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#1b5e20;
+}
+
+.quiz{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:40px;
+}
+
+.quiz button{
+margin:10px;
+padding:10px 20px;
+border:none;
+background:#2e7d32;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+.certificado{
+background:white;
+padding:30px;
+border-radius:15px;
+display:none;
+text-align:center;
+}
+
+.mapa{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-top:40px;
+text-align:center;
+}
+
+.mapa img{
+max-width:500px;
+width:100%;
+}
+
+.sair{
+background:red;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+<script>
+
+if(localStorage.getItem("logado") !== "true"){
+window.location.href="login.html";
+}
+
+</script>
+
+</head>
+<body>
+
+<header>
+
+<h1>🌱 Dashboard Agro Forte 2026</h1>
+
+<button class="sair" onclick="sair()">
+Sair
+</button>
+
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+<h2>5000+</h2>
+<p>Produtores</p>
+</div>
+
+<div class="card">
+<h2>120</h2>
+<p>Tecnologias</p>
+</div>
+
+<div class="card">
+<h2>300</h2>
+<p>Projetos Sustentáveis</p>
+</div>
+
+<div class="card">
+<h2>1.000.000</h2>
+<p>Famílias Beneficiadas</p>
+</div>
+
+</div>
+
+<div class="quiz">
+
+<h2>Quiz do Agro</h2>
+
+<p>O uso de drones ajuda a monitorar plantações?</p>
+
+<button onclick="acertou()">
+Sim
+</button>
+
+<button onclick="errou()">
+Não
+</button>
+
+<p id="resultado"></p>
+
+</div>
+
+<div class="certificado" id="certificado">
+
+<h2>🏆 Certificado</h2>
+
+<p>
+
+Parabéns!
+
+Você concluiu o Quiz do Agro.
+
+</p>
+
+</div>
+
+<div class="mapa">
+
+<h2>🗺️ Produção Agrícola do Brasil</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Brazil_regions_map.svg">
+
+<p>
+
+Centro-Oeste: Soja e Milho<br>
+Sul: Trigo e Soja<br>
+Sudeste: Café<br>
+Nordeste: Frutas<br>
+Norte: Extrativismo
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function sair(){
+
+localStorage.removeItem("logado");
+
+window.location.href="login.html";
+
+}
+
+function acertou(){
+
+document.getElementById("resultado")
+.innerHTML="✅ Resposta Correta!";
+
+document.getElementById("certificado")
+.style.display="block";
+
+}
+
+function errou(){
+
+document.getElementById("resultado")
+.innerHTML="❌ Resposta Incorreta";
+
+}
+
+</script>
+
+</body>
+</html>
