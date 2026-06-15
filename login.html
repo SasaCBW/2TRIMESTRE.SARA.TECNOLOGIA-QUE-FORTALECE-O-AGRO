@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Agro Forte 2026</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#1b5e20,#43a047);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-container{
+
+    width:90%;
+    max-width:400px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    text-align:center;
+
+}
+
+.login-container h1{
+
+    color:#1b5e20;
+    margin-bottom:10px;
+
+}
+
+.login-container p{
+
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:#2e7d32;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1b5e20;
+
+}
+
+.erro{
+
+    margin-top:15px;
+
+    color:red;
+
+    display:none;
+
+}
+
+.logo{
+
+    font-size:60px;
+    margin-bottom:15px;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="logo">
+        🌱
+    </div>
+
+    <h1>Agro Forte 2026</h1>
+
+    <p>
+        Faça login para acessar o sistema
+    </p>
+
+    <input
+        type="text"
+        id="usuario"
+        placeholder="Usuário">
+
+    <input
+        type="password"
+        id="senha"
+        placeholder="Senha">
+
+    <button onclick="entrar()">
+        Entrar
+    </button>
+
+    <div class="erro" id="erro">
+
+        Usuário ou senha incorretos
+
+    </div>
+
+</div>
+
+<script>
+
+function entrar(){
+
+    const usuario =
+    document.getElementById("usuario").value;
+
+    const senha =
+    document.getElementById("senha").value;
+
+    if(
+        usuario === "agrinho" &&
+        senha === "2026"
+    ){
+
+        localStorage.setItem(
+            "logado",
+            "true"
+        );
+
+        window.location.href =
+        "inicio.html";
+
+    }
+
+    else{
+
+        document
+        .getElementById("erro")
+        .style.display =
+        "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
