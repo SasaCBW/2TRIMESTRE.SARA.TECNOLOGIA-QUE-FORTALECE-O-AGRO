@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agro Forte 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+}
+
+.logo{
+    color:white;
+    font-size:1.7rem;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+}
+
+.hero{
+
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef")
+    center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+
+}
+
+.hero-content h1{
+    font-size:4rem;
+}
+
+.hero-content p{
+    margin-top:20px;
+    font-size:1.2rem;
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    background:#43a047;
+
+    color:white;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+section{
+    padding:100px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1b5e20;
+}
+
+/* CARROSSEL */
+
+.slider{
+
+    width:100%;
+    max-width:1100px;
+
+    height:550px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.slides{
+
+    display:flex;
+
+    width:500%;
+    height:100%;
+
+    transition:1s;
+
+}
+
+.slides img{
+
+    width:20%;
+    object-fit:cover;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.card h3{
+    color:#1b5e20;
+    margin-bottom:10px;
+}
+
+footer{
+
+    background:#1b5e20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+.slider{
+    height:250px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🌱 Agro Forte 2026
+</div>
+
+<nav>
+
+<a href="#inicio">Início</a>
+<a href="#carrossel">Galeria</a>
+<a href="#tecnologia">Tecnologia</a>
+
+<a href="dashboard.html">
+Dashboard
+</a>
+
+</nav>
+
+</header>
+
+<section id="inicio" class="hero">
+
+<div class="hero-content">
+
+<h1>
+TECNOLOGIA QUE FORTALECE O AGRO
+</h1>
+
+<p>
+
+O campo produz.
+A tecnologia impulsiona.
+A sustentabilidade garante o futuro.
+
+</p>
+
+<a href="#carrossel" class="btn">
+Explorar
+</a>
+
+</div>
+
+</section>
+
+<section id="carrossel">
+
+<h2>Agro em Destaque</h2>
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+
+<img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95">
+
+<img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="tecnologia">
+
+<h2>Tecnologias do Agro</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🚁 Drones</h3>
+
+<p>
+Monitoramento inteligente das lavouras.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛰 GPS Agrícola</h3>
+
+<p>
+Precisão no plantio e colheita.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🤖 Robótica</h3>
+
+<p>
+Automação e produtividade.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💡 Inteligência Artificial</h3>
+
+<p>
+Análise avançada de dados.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>🌱 Agro Forte 2026</h3>
+
+<p>
+Projeto Agrinho 2026
+</p>
+
+</footer>
+
+<script>
+
+let slideAtual = 0;
+
+const slides =
+document.querySelector(".slides");
+
+setInterval(()=>{
+
+slideAtual++;
+
+if(slideAtual > 4){
+
+slideAtual = 0;
+
+}
+
+slides.style.transform =
+`translateX(-${slideAtual * 20}%)`;
+
+},3000);
+
+</script>
+
+</body>
+
+</html>
